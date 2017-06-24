@@ -4,4 +4,4 @@ Our drawings go straight to the point.
 
 Cheers,
 
-George, Tiziani, Arno, Jan, Taavi
+George, Tiziano, Arno, Jan, Taavi
