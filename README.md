@@ -2,6 +2,13 @@
 
 Our drawings go straight to the point.
 
+# Steps
+
+* done - text2ppt
+* done - title2ppt
+* done - link2ppt
+* done - image2ppt
+
 Cheers,
 
-George, Tiziano, Arno, Jan, Taavi
+Tiziano, Arno, Taavi, George

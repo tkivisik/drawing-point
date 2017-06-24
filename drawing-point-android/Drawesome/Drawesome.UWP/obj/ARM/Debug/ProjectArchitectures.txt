@@ -1,0 +1,1 @@
+C:\Works\Drawesome\Drawesome\Drawesome.UWP\Drawesome.UWP.csproj;arm
