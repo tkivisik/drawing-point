@@ -11,4 +11,4 @@ Our drawings go straight to the point.
 
 Cheers,
 
-Tiziano, Arno, Taavi, George
+Tiziano, Arno, Taavi, George, Jan
