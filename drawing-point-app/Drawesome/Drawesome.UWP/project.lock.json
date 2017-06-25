@@ -595,6 +595,26 @@
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Presentation.Portable.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfListView/15.2.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.180"
+        },
+        "compile": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3400,6 +3420,26 @@
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Presentation.Portable.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfListView/15.2.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.180"
+        },
+        "compile": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -6060,6 +6100,26 @@
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Presentation.Portable.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfListView/15.2.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.180"
+        },
+        "compile": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -8688,6 +8748,26 @@
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Compression.Portable.dll": {},
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.OfficeChart.Portable.dll": {},
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Presentation.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/15.2.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.180"
+        },
+        "compile": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -11359,6 +11439,26 @@
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Presentation.Portable.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfListView/15.2.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.180"
+        },
+        "compile": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        }
+      },
       "System.AppContext/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -13987,6 +14087,26 @@
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Compression.Portable.dll": {},
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.OfficeChart.Portable.dll": {},
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Presentation.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/15.2.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.180"
+        },
+        "compile": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -16656,6 +16776,26 @@
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Compression.Portable.dll": {},
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.OfficeChart.Portable.dll": {},
           "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Presentation.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfListView/15.2.0.43": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.180"
+        },
+        "compile": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Syncfusion.Core.XForms.dll": {},
+          "lib/uap10.0/Syncfusion.DataSource.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.GridCommon.Portable.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll": {},
+          "lib/uap10.0/Syncfusion.SfListView.XForms.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -22265,6 +22405,50 @@
         "syncfusion.xamarin.presentation.nuspec"
       ]
     },
+    "Syncfusion.Xamarin.SfListView/15.2.0.43": {
+      "sha512": "7TJGSXHj/OYKTx7rTkbiw6ThJz+hvH8ewoYJ0T4suMW/g0LSU884avqWDFkDtVV9tlSTiIF/iqPAa1NTtaPFpw==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sflistview/15.2.0.43",
+      "files": [
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.XML",
+        "lib/MonoAndroid10/Syncfusion.Core.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.DataSource.Portable.dll",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.XML",
+        "lib/MonoAndroid10/Syncfusion.GridCommon.Portable.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfListView.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.XML",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.DataSource.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
+        "lib/Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfListView.XForms.xml",
+        "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Core.XForms.XML",
+        "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.Core.XForms.dll",
+        "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.DataSource.Portable.XML",
+        "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.DataSource.Portable.dll",
+        "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.GridCommon.Portable.XML",
+        "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.GridCommon.Portable.dll",
+        "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.SfListView.XForms.dll",
+        "lib/portable-win+net45+wp80+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Syncfusion.SfListView.XForms.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.XML",
+        "lib/uap10.0/Syncfusion.Core.XForms.dll",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.XML",
+        "lib/uap10.0/Syncfusion.DataSource.Portable.dll",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.XML",
+        "lib/uap10.0/Syncfusion.GridCommon.Portable.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfListView.XForms.xml",
+        "syncfusion.xamarin.sflistview.15.2.0.43.nupkg.sha512",
+        "syncfusion.xamarin.sflistview.nuspec"
+      ]
+    },
     "System.AppContext/4.3.0": {
       "sha512": "fKC+rmaLfeIzUhagxY17Q9siv/sPrjjKcfNg1Ic8IlQkZLipo8ljcaZQu4VtI4Jqbzjc2VTjzGLF6WmsRXAEgA==",
       "type": "package",
@@ -27745,6 +27929,7 @@
       "Syncfusion.Xamarin.Compression >= 15.2.0.43",
       "Syncfusion.Xamarin.OfficeChart >= 15.2.0.43",
       "Syncfusion.Xamarin.Presentation >= 15.2.0.43",
+      "Syncfusion.Xamarin.SfListView >= 15.2.0.43",
       "Xam.Plugin.Media >= 2.6.2",
       "Xamarin.FFImageLoading >= 2.2.9",
       "Xamarin.FFImageLoading.Forms >= 2.2.9",
@@ -27770,13 +27955,11 @@
       "Syncfusion.Xamarin.Compression": "15.2.0.43",
       "Syncfusion.Xamarin.OfficeChart": "15.2.0.43",
       "Syncfusion.Xamarin.Presentation": "15.2.0.43",
+      "Syncfusion.Xamarin.SfListView": "15.2.0.43",
       "Xam.Plugin.Media": "2.6.2",
       "Xamarin.FFImageLoading": "2.2.9",
-      "Xamarin.Forms": "2.3.4.247",
-      "Xamarin.FFImageLoading.Forms": {
-        "target": "Package",
-        "version": "[2.2.9, )"
-      }
+      "Xamarin.FFImageLoading.Forms": "2.2.9",
+      "Xamarin.Forms": "2.3.4.247"
     },
     "frameworks": {
       "uap10.0": {}

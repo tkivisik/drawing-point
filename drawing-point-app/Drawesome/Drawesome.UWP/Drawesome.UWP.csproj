@@ -97,6 +97,8 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="loading.png" />
+    <Content Include="stop.png" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +116,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ok-cloud.png" />
     <Content Include="profile_generic.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="slideout.png" />
@@ -132,11 +135,6 @@
     <SDKReference Include="Microsoft.VCLibs, Version=14.0">
       <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
     </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="FFImageLoading.Forms">
-      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.2.9\lib\MonoAndroid10\FFImageLoading.Forms.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <Import Project="..\Drawesome\Drawesome.projitems" Label="Shared" Condition="Exists('..\Drawesome\Drawesome.projitems')" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

@@ -2,14 +2,42 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             x:Class="Drawesome.Views.GetPhotoPage">
-    <ContentPage.Content>
-        <StackLayout>
+             xmlns:xForms="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+            x:Class="Drawesome.Views.GetPhotoPage">
 
-            <Button Text="TAKE A PHOTO" Clicked="Button_Clicked">
-                
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0,1*"></RowDefinition>
+                <RowDefinition Height="0,1*"></RowDefinition>
+                <RowDefinition Height="0,8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Text="TAKE A PHOTO" Grid.Row="0" Clicked="Button_Clicked">
+
             </Button>
-            <forms:CachedImage x:Name="TestImage" DownsampleToViewSize="True" Aspect="AspectFill" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" ></forms:CachedImage>
-        </StackLayout>
+            <Button Text="REDO" Grid.Row="1" Clicked="DoRedo_OnClicked">
+
+            </Button>
+            <xForms:SfListView x:Name="ProgressList" ItemSize="80" Grid.Row="2">
+                <xForms:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.8*"></ColumnDefinition>
+                                <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="16" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Bold" Text="{Binding Title}"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" FontSize="14" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Description}"></Label>
+                            <forms:CachedImage HeightRequest="32" WidthRequest="32" Grid.Column="1" Grid.RowSpan="2" DownsampleHeight="32" DownsampleWidth="32" VerticalOptions="Center" HorizontalOptions="Center" Source="{Binding IsRunning, Converter={StaticResource IsRunningConverter}}"></forms:CachedImage>
+                        </Grid>
+                    </DataTemplate>
+                </xForms:SfListView.ItemTemplate>
+            </xForms:SfListView>
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

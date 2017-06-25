@@ -8,6 +8,7 @@
     <ResolvedResourceDirectory>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Plugin.CurrentActivity\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Plugin.Media\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Plugin.Permissions\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Syncfusion.SfListView.XForms.Android\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.Design\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat\library_project_imports\res</ResolvedResourceDirectory>
@@ -24,6 +25,7 @@
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Plugin.CurrentActivity\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Plugin.Media\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Plugin.Permissions\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\Syncfusion.SfListView.XForms.Android\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.Platform.Android\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\__library_projects__\Xamarin.Forms.Platform\library_project_imports\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
@@ -35,6 +37,7 @@
     <ResolvedResourceDirectoryStamp>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Plugin.CurrentActivity.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Plugin.Media.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Plugin.Permissions.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Syncfusion.SfListView.XForms.Android.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.Design.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.Android\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat.stamp</ResolvedResourceDirectoryStamp>

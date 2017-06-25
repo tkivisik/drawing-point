@@ -11,7 +11,8 @@
 namespace Drawesome.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Works\\Drawesome\\Drawesome\\Drawesome\\Views\\AboutPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\TizianoCristini\\Source\\Repos\\drawing-point\\Drawesome\\Drawesome\\Drawesome" +
+        "\\Views\\AboutPage.xaml")]
     public partial class AboutPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

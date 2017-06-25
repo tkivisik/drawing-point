@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Drawesome.Helpers;
 #if WINDOWS_UWP
 using Windows.Storage;
-using Windows.Storage.BulkAccess;
 #endif
-
-using FFImageLoading.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PCLStorage;
@@ -29,6 +25,7 @@ namespace Drawesome.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GetPhotoPage : ContentPage
     {
+        public ProgressViewModel ProgressViewModel { get; set; }
         const string subscriptionKey = "108a07b25f52409b8e9d4cb5e18d0d9f";
         private const string bingSubscription = "78d76116fad440ed81216c0babc0873d";
         const string uriBase = "https://westeurope.api.cognitive.microsoft.com/vision/v1.0/recognizeText";
@@ -36,6 +33,33 @@ namespace Drawesome.Views
         public GetPhotoPage()
         {
             InitializeComponent();
+            ProgressViewModel = new ProgressViewModel
+            {
+                Items = new ObservableCollection<ProgressItem>()
+                {
+                    new ProgressItem()
+                    {
+                        Title = "Take a Photo", Description = "Use your camera to shoot a photo."
+                    },
+                    new ProgressItem()
+                    {
+                        Title = "Cognitive AI",
+                        Description = "Cognitive services are analysing handwritted data.."
+                    },
+                    new ProgressItem()
+                    {
+                        Title = "Cognitive AI",
+                        Description = "Cognitive services and BING search are working for you..."
+                    },
+                    new ProgressItem()
+                    {
+                        Title = "PowerPoint Creation",
+                        Description = "Creating Microsoft PowerPint File..."
+                    },
+                    new ProgressItem() {Title = "File Preview", Description = "File Preview Started"},
+                }
+            };
+            ProgressList.ItemsSource = ProgressViewModel.Items;
         }
 
         public HttpClient GetClient(MsType type)
@@ -47,8 +71,8 @@ namespace Drawesome.Views
             switch (type)
             {
                 case MsType.HandWritingRecognition:
-                    string requestParameters = "handwriting=true";
-                    string uri = uriBase + "?" + requestParameters;
+                    var requestParameters = "handwriting=true";
+                    var uri = uriBase + "?" + requestParameters;
                     client = new HttpClient { BaseAddress = new Uri(uri) };
                     client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
@@ -80,6 +104,14 @@ namespace Drawesome.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            ProgressViewModel.Items[0].IsRunning = null;
+            ProgressViewModel.Items[1].IsRunning = null;
+            ProgressViewModel.Items[2].IsRunning = null;
+            ProgressViewModel.Items[3].IsRunning = null;
+            ProgressViewModel.Items[4].IsRunning = null;
+
+
+            ProgressViewModel.Items[0].IsRunning = true;
             await CrossMedia.Current.Initialize();
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
@@ -88,50 +120,47 @@ namespace Drawesome.Views
                 return;
             }
 
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
-                Directory = "Sample",
+                Directory = "HandWrites",
                 Name = "test.jpg",
                 AllowCropping = true,
-                CompressionQuality = 40, PhotoSize = PhotoSize.Custom, CustomPhotoSize = 50
+                CompressionQuality = 40,
+                PhotoSize = PhotoSize.Custom,
+                CustomPhotoSize = 50
             });
 
             if (file == null)
                 return;
+            ProgressViewModel.Items[0].IsRunning = false;
 
+            //GET THE CLIENT HW
+            ProgressViewModel.Items[1].IsRunning = true;
             var client = GetClient(MsType.HandWritingRecognition);
-
-            HttpResponseMessage response;
-
+            //MEMORY STREAM FOR IMAGE
             var ms = new MemoryStream();
-            // Request body. Posts a locally stored JPEG image.
+            //LOAD MS
             (await (await FileSystem.Current.GetFileFromPathAsync(file.Path)).OpenAsync(FileAccess.Read)).CopyTo(ms);
-
-            
-            using (ByteArrayContent content = new ByteArrayContent(ms.ToArray()))
+            //POST IMAGE
+            using (var content = new ByteArrayContent(ms.ToArray()))
             {
-                // This example uses content type "application/octet-stream".
-                // The other content types you can use are "application/json" and "multipart/form-data".
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-
-                // Execute the REST API call.
-                response = await client.PostAsync(client.BaseAddress, content);
+                var response = await client.PostAsync(client.BaseAddress, content);
                 string operationLocation;
 
                 if (response.IsSuccessStatusCode)
-                {
                     operationLocation = response.Headers.GetValues("Operation-Location").FirstOrDefault();
-                }
                 else
                 {
                     // Display the JSON error data.
                     Console.WriteLine("\nError:\n");
-                    Console.WriteLine(await response.Content.ReadAsStringAsync());
+                    var msg = await response.Content.ReadAsStringAsync();
+                    await DisplayAlert("ERROR", msg, "OK");
                     return;
                 }
                 // Get the JSON response.
                 string contentString;
-                int i = 0;
+                var i = 0;
                 do
                 {
                     await Task.Delay(1000);
@@ -150,44 +179,62 @@ namespace Drawesome.Views
                 // Display the JSON response.
                 Console.WriteLine("\nResponse:\n");
                 var jo = JsonConvert.DeserializeObject<JObject>(contentString);
-                var jo1 = jo["recognitionResult"]["lines"].Children().OrderBy(o=>o["boundingBox"][1].Value<int>()).ToArray();
+                var jo1 = jo["recognitionResult"]["lines"].Children().OrderBy(o => o["boundingBox"][1].Value<int>()).ToArray();
 
-                var test = jo1.Select(s => new DpItem(s)).ToArray();
-                var minSize = test.Min(m => m.Height);
-                var maxSize = test.Max(m => m.Height);
-                var minimumLeft = test.Min(m => m.Left);
-                var minimumTop = test.Min(m => m.Top);
-                var maximumTop = test.Max(m => m.Top);
+                DpItems = jo1.Select(s => new DpItem(s)).ToArray();
+                //var minSize = test.Min(m => m.Height);
+                //var maxSize = test.Max(m => m.Height);
+                //var minimumLeft = test.Min(m => m.Left);
+                //var minimumTop = test.Min(m => m.Top);
+                //var maximumTop = test.Max(m => m.Top);
+                ProgressViewModel.Items[1].IsRunning = false;
+                DoRedo();
+            }
 
+        }
 
-                IPresentation presentation = Presentation.Create();
+        public async void DoRedo()
+        {
+            ProgressViewModel.Items[2].IsRunning = true;
+            ProgressViewModel.Items[3].IsRunning = true;
 
-                //Adds new Blank type of slide.
+            var presentation = Presentation.Create();
 
-                ISlide slide = presentation.Slides.Add(SlideLayoutType.Blank);
-                
-                //Adds Rectangle auto shape with specified size and positions.
+            //Adds new Blank type of slide.
 
-                IShape shape = slide.Shapes.AddShape(AutoShapeType.Rectangle, 0, 0, 500, 300);
-                shape.Fill.FillType = FillType.Solid;
-                shape.Fill.SolidFill.Color = ColorObject.White;
-                shape.Fill.SolidFill.Transparency = 70;
-                //Adds text into the shape.
-                //var remail = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$1^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
-                //var ruri = new Regex(@"^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&%\$#_]*)?$");
+            var slide = presentation.Slides.Add(SlideLayoutType.Blank);
 
-                foreach (var dpItem in test)
+            //Adds Rectangle auto shape with specified size and positions.
+
+            var shape = slide.Shapes.AddShape(AutoShapeType.Rectangle, 0, 0, 500, 300);
+            shape.Fill.FillType = FillType.Solid;
+            shape.Fill.SolidFill.Color = ColorObject.White;
+            shape.Fill.SolidFill.Transparency = 70;
+            //Adds text into the shape.
+            //var remail = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$1^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
+            //var ruri = new Regex(@"^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&%\$#_]*)?$");
+
+            foreach (var dpItem in DpItems)
+            {
+                var dp = dpItem.TextContents.ToLower().Trim();
+                if (dp.StartsWith("image") || dp.StartsWith("background"))
                 {
-                    var dp = dpItem.TextContents.ToLower().Trim();
-                    if (dp.StartsWith("image") || dp.StartsWith("background"))
+                    var searchImage = dp.Split('-').LastOrDefault();
+                    if (dp.StartsWith("background"))
                     {
-                        var searchItem = dp.Split('-').LastOrDefault()?.Trim();
+                        searchImage = searchImage.Replace("image", string.Empty);
+                    }
+                    if (searchImage != null)
+                    {
+                        var searchItem = string.Join("+", searchImage.Split(' ').Where(s => !string.IsNullOrWhiteSpace(s.Trim()))).Trim();
                         if (string.IsNullOrWhiteSpace(searchItem))
                         {
                             //todo empty image
                         }
                         else
                         {
+
+
                             var bs = GetClient(MsType.BingSearch);
                             var ss = await bs.GetStringAsync(bs.BaseAddress + searchItem);
                             var jimg = JsonConvert.DeserializeObject<JObject>(ss);
@@ -216,8 +263,8 @@ namespace Drawesome.Views
                             }
 
                             var realScaler = Math.Min(scaleRx, scaleRy);
-                            double newImageWidth = targetImgWidth * realScaler;
-                            double newImageHeight = targetImgHeight * realScaler;
+                            var newImageWidth = targetImgWidth * realScaler;
+                            var newImageHeight = targetImgHeight * realScaler;
                             var positionX = sw - newImageWidth;
                             var positionY = sh - newImageHeight;
 
@@ -244,43 +291,59 @@ namespace Drawesome.Views
 
 
 
-                            TestImage.Source = targetImgUri;
+
                         }
-
-                    }
-                    else
-                    {
-
-                        var pp = shape.TextBody.AddParagraph(dpItem.TextContents);
-                        pp.Font.FontSize = dpItem.FontSize;
-                        
                     }
                 }
+                else
+                {
 
+                    var pp = shape.TextBody.AddParagraph(dpItem.TextContents);
+                    pp.Font.FontSize = dpItem.FontSize;
 
-                //Creates new memory stream to save Presentation.
-
-                MemoryStream stream = new MemoryStream();
-
-                //Saves Presentation in stream format.
-
-                presentation.Save(stream);
-
-                presentation.Close();
-
-                stream.Position = 0;
-                var fname = $"{Guid.NewGuid()}.pptx";
-                var f = await FileSystem.Current.LocalStorage.CreateFileAsync(fname, CreationCollisionOption.ReplaceExisting);
-                var os = await f.OpenAsync(FileAccess.ReadAndWrite);
-                await stream.CopyToAsync(os);
-                await os.FlushAsync();
-
-#if WINDOWS_UWP
-                var fileFromPathAsync = await StorageFile.GetFileFromPathAsync(f.Path);
-                Windows.System.Launcher.LaunchFileAsync(fileFromPathAsync);
-#endif
+                }
             }
 
+
+            //Creates new memory stream to save Presentation.
+
+            var stream = new MemoryStream();
+
+            //Saves Presentation in stream format.
+
+            presentation.Save(stream);
+
+            presentation.Close();
+
+            stream.Position = 0;
+            var fname = $"{Guid.NewGuid()}.pptx";
+            var f = await FileSystem.Current.LocalStorage.CreateFileAsync(fname, CreationCollisionOption.ReplaceExisting);
+            var os = await f.OpenAsync(FileAccess.ReadAndWrite);
+            await stream.CopyToAsync(os);
+            await os.FlushAsync();
+            ProgressViewModel.Items[2].IsRunning = false;
+            ProgressViewModel.Items[3].IsRunning = false;
+#if WINDOWS_UWP
+            ProgressViewModel.Items[4].IsRunning = true;
+
+            var fileFromPathAsync = await StorageFile.GetFileFromPathAsync(f.Path);
+            Windows.System.Launcher.LaunchFileAsync(fileFromPathAsync);
+
+            ProgressViewModel.Items[4].IsRunning = false;
+
+#endif
+        }
+        public DpItem[] DpItems { get; set; }
+
+        private void DoRedo_OnClicked(object sender, EventArgs e)
+        {
+            ProgressViewModel.Items[0].IsRunning = null;
+            ProgressViewModel.Items[1].IsRunning = null;
+            ProgressViewModel.Items[2].IsRunning = null;
+            ProgressViewModel.Items[3].IsRunning = null;
+            ProgressViewModel.Items[4].IsRunning = null;
+
+            DoRedo();
         }
     }
 
@@ -301,22 +364,22 @@ namespace Drawesome.Views
             Height = jtb[7] - jtb[1];
             Left = jtb[0];
             Top = jtb[1];
-            //if (Height > 80)
-            //{
-            //    FontSize = 68;
-            //}
-            //else if (Height > 60)
-            //{
-            //    FontSize = 56;
-            //}
-            //else if (Height > 40)
-            //{
-            //    FontSize = 44;
-            //}
-            //else
-            //{
-            //    FontSize = 24;
-            //}
+            if (Height > 80)
+            {
+                FontSize = 68;
+            }
+            else if (Height > 60)
+            {
+                FontSize = 56;
+            }
+            else if (Height > 40)
+            {
+                FontSize = 44;
+            }
+            else
+            {
+                FontSize = 24;
+            }
             TextContents = jt["text"].Value<string>();
         }
 
@@ -326,5 +389,41 @@ namespace Drawesome.Views
         public string FontColor { get; set; }
         public string FontType { get; set; }
         public string TextContents { get; set; }
+    }
+
+    public class ProgressItem : ObservableObject
+    {
+        private bool? _isRunning;
+        private string _title;
+        private string _description;
+
+        public string Title
+        {
+            get => _title;
+            set => SetProperty(ref _title, value);
+        }
+
+        public string Description
+        {
+            get => _description;
+            set => SetProperty(ref _description, value);
+        }
+
+        public bool? IsRunning
+        {
+            get => _isRunning;
+            set => SetProperty(ref _isRunning, value);
+        }
+    }
+
+    public class ProgressViewModel : ObservableObject
+    {
+        private ObservableCollection<ProgressItem> _items;
+
+        public ObservableCollection<ProgressItem> Items
+        {
+            get => _items;
+            set => SetProperty(ref _items, value);
+        }
     }
 }

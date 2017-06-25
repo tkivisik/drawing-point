@@ -7,6 +7,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using FFImageLoading.Forms;
+using Syncfusion.ListView.XForms.UWP;
 
 namespace Drawesome.UWP
 {
@@ -42,6 +43,7 @@ namespace Drawesome.UWP
                 rootFrame = new Frame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
+           
                 var assembliesToInclude = new List<Assembly>()
                 {
                     typeof(CachedImage).GetTypeInfo().Assembly,

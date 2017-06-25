@@ -11,12 +11,17 @@
 namespace Drawesome.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Works\\Drawesome\\Drawesome\\Drawesome\\Views\\GetPhotoPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\TizianoCristini\\Source\\Repos\\drawing-point\\Drawesome\\Drawesome\\Drawesome" +
+        "\\Views\\GetPhotoPage.xaml")]
     public partial class GetPhotoPage : global::Xamarin.Forms.ContentPage {
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Syncfusion.ListView.XForms.SfListView ProgressList;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(GetPhotoPage));
+            ProgressList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Syncfusion.ListView.XForms.SfListView>(this, "ProgressList");
         }
     }
 }

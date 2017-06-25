@@ -390,7 +390,6 @@ C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesom
 C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\bin\x86\Debug\Xamarin.Forms.Platform.UAP.dll
 C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\bin\x86\Debug\Xamarin.Forms.Platform.dll
 C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\bin\x86\Debug\Xamarin.Forms.Xaml.dll
-C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\obj\x86\Debug\Drawesome.UWP.csprojResolveAssemblyReference.cache
 C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\obj\x86\Debug\App.g.i.cs
 C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\obj\x86\Debug\App.g.cs
 C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\obj\x86\Debug\MainPage.g.i.cs
@@ -506,3 +505,9 @@ C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesom
 C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\obj\x86\Debug\Syncfusion.OfficeChart.Portable\en\Syncfusion.OfficeChart.PresetGradients.resw
 C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\obj\x86\Debug\Syncfusion.OfficeChart.Portable\en\Syncfusion.OfficeChart.TexturePatternGradient.resw
 C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\obj\x86\Debug\Syncfusion.OfficeChart.Portable\en\Syncfusion.OfficeChart.VMLPresetGradientFills.resw
+C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\bin\x86\Debug\Syncfusion.Core.XForms.dll
+C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\bin\x86\Debug\Syncfusion.DataSource.Portable.dll
+C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\bin\x86\Debug\Syncfusion.GridCommon.Portable.dll
+C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\bin\x86\Debug\Syncfusion.SfListView.XForms.UWP.dll
+C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\bin\x86\Debug\Syncfusion.SfListView.XForms.dll
+C:\Users\TizianoCristini\Source\Repos\drawing-point\Drawesome\Drawesome\Drawesome.UWP\obj\x86\Debug\Drawesome.UWP.csprojResolveAssemblyReference.cache
